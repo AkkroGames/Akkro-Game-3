@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🚀 Space Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="space_tic_tac_toe.css">
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <!-- Mode Button -->
+  <button class="menu-button" onclick="showModeMenu()">🎮 Game Modes</button>
+
+  <!-- Shop Button -->
+  <button class="shop-button" onclick="showShopMenu()">💎 Shop</button>
+
+  <!-- Mode Menu -->
+  <div class="mode-menu" id="modeMenu">
+    <h2>Choose a Mode</h2>
+    <button class="button" onclick="startGame('bot')">🤖 1v1 vs Bot</button>
+    <button class="button" onclick="startGame('2v2')">👥 2v2</button>
+    <button class="button" onclick="backToMenu()">🔙 Back</button>
+  </div>
+
+  <!-- Shop Menu -->
+  <div class="shop-menu" id="shopMenu">
+    <h2>Welcome to the Shop</h2>
+    <button class="button" onclick="buyIncreaseField()">📏 Increase Field (+1) - 5 points</button>
+    <button class="button" onclick="buyKnightMove()">🐴 Knight Move - 25 points</button>
+    <button class="button" onclick="buyGoldenCross()">✴️ Golden Cross - 50 points</button>
+    <button class="button" onclick="backToGame()">🔙 Back to Game</button>
+  </div>
+
+  <!-- Game Interface -->
+  <div class="game" id="game">
+    <h1>🚀 Space Tic-Tac-Toe</h1>
+    <div class="board" id="board"></div>
+    <div class="controls">
+      <button class="button" onclick="resetGame()">🔁 Reset</button>
+    </div>
+    <h2 id="status"></h2>
+    <div class="score" id="score">🏆 Score: X - 0</div>
+  </div>
+
+  <script src="space_tic_tac_toe.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at center, #0b0c2a 0%, #000000 100%);
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  position: relative;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.menu-button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.shop-button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffb400;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.game, .mode-menu, .shop-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  gap: 5px;
+  perspective: 800px;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.5s;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotateY(10deg) scale(1.05);
+}
+
+.cell.x::after,
+.cell.o::after {
+  content: attr(data-symbol);
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  to {
+    text-shadow: 0 0 20px #f0f, 0 0 40px #f0f;
+  }
+}
+
+.winner {
+  box-shadow: 0 0 15px 5px #0ff;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+.button {
+  background: #0ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #0cf;
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.shop-menu {
+  text-align: center;
+}
